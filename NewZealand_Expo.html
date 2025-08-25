@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Zealand Education Expo | Dreambuzz Education</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: #f5f7fa;
+        color: #333;
+      }
+      header {
+        background: linear-gradient(135deg, #004aad, #0077c8);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+        overflow: hidden;
+      }
+      header img {
+        max-width: 180px;
+        margin-bottom: 15px;
+        animation: bounceIn 2s ease-out infinite alternate;
+      }
+      header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        animation: fadeInScale 2s ease-out forwards;
+      }
+      header p {
+        font-size: 1.1em;
+        animation: fadeIn 3s ease-in forwards;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInScale {
+        from { opacity: 0; transform: scale(0.7); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes bounceIn {
+        from { transform: translateY(0); }
+        to { transform: translateY(-10px); }
+      }
+      @keyframes highlight {
+        0% { color: #004aad; }
+        50% { color: #ff9800; }
+        100% { color: #004aad; }
+      }
+      @keyframes pulseGlow {
+        0% { box-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800; }
+        50% { box-shadow: 0 0 25px #ff9800, 0 0 50px #ff9800; }
+        100% { box-shadow: 0 0 10px #ff9800, 0 0 20px #ff9800; }
+      }
+
+      /* New: Eye-catching animated 50% badge */
+      .offer-wrap {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 10px;
+        filter: drop-shadow(0 4px 12px rgba(255, 87, 34, 0.4));
+      }
+      .offer {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 1.8em;              /* bigger text */
+        letter-spacing: 0.5px;
+        line-height: 1;
+        background: linear-gradient(90deg, #ff3d00, #ff9800, #ff3d00);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;            /* gradient text */
+        animation: gradientShift 2.5s linear infinite, pop 1.4s ease-in-out infinite;
+        padding: 0 6px;
+      }
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      @keyframes pop {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.08); }
+      }
+
+      /* Button Styling */
+      .register-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        margin: 20px auto;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(135deg, #ff9800, #ff5722);
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.3s;
+        animation: pulseGlow 2s infinite;
+      }
+      .register-btn:hover {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, #ff5722, #ff9800);
+      }
+
+      section {
+        padding: 40px 20px;
+        text-align: center;
+      }
+      section h2,
+      section h3 {
+        color: #004aad;
+        margin-bottom: 20px;
+        animation: highlight 3s infinite;
+      }
+      section p,
+      section li {
+        max-width: 800px;
+        margin: auto;
+        line-height: 1.6;
+        font-size: 1em;
+        animation: fadeIn 2s ease-in;
+      }
+      ul {
+        list-style: none;
+        margin-top: 15px;
+      }
+      ul li {
+        background: #fff;
+        margin: 10px auto;
+        padding: 12px 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        text-align: left;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s;
+      }
+      ul li:hover {
+        transform: scale(1.05);
+      }
+      ul li::before {
+        content: "✈️🌍 ";
+        color: #28a745;
+        font-weight: bold;
+      }
+      .gifts ul li::before { content: "🎁 "; color: #ff9800; }
+      .gifts,
+      .ielts {
+        background: #fff;
+        margin-top: 30px;
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        animation: fadeInScale 2s ease-out;
+      }
+      iframe {
+        width: 100%;
+        max-width: 700px;
+        height: 820px;
+        border: none;
+        margin-top: 20px;
+        animation: fadeIn 2.5s ease-in;
+      }
+      footer {
+        background: #004aad;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 0.9em;
+        margin-top: 30px;
+        animation: fadeIn 3s ease-in;
+      }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; transition: none !important; }
+      }
+
+      @media (max-width: 768px) {
+        header h1 { font-size: 2em; }
+        section h2, section h3 { font-size: 1.5em; }
+        .offer { font-size: 1.6em; } /* slightly smaller on mobile */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://dreambuzzbd.com/frontend/assets/images/logo.png"
+        alt="Dreambuzz Education Logo"
+      />
+      <h1>New Zealand Education Expo 2025</h1>
+      <p>
+        Organized by Dreambuzz Education – Your Trusted Partner for Studying
+        Abroad
+      </p>
+    </header>
+
+    <section>
+      <h2>📅 Event Details</h2>
+      <p>
+        <strong>Date:</strong> Saturday, 6th September 2025 <br />
+        <strong>Time:</strong> 10:00 AM – 5:00 PM <br />
+        <strong>Venue:</strong> F5-B (Lift 5), House 411, Road 29, New DOHS,
+        Mohakhali, Dhaka-1206. <br>
+        <strong><a href="https://maps.app.goo.gl/jmKFEfPkuxkwBxhY6?g_st=ic">Google Map</a></strong>
+      </p>
+    </section>
+
+    <!-- Register Button Section -->
+    <section>
+      <a href="#register-form" class="register-btn">✨ Register Now ✨</a>
+    </section>
+
+    <section>
+      <h2>🎓 Why Choose New Zealand for Higher Studies?</h2>
+      <ul>
+        <li>Tuition Fees After Visa – Pay only after approval</li>
+        <li>No Age Barriers – Study opportunities for every age</li>
+        <li>Apply with Family – Take your spouse and children</li>
+        <li>Free Child Education – Schooling at no cost</li>
+        <li>Easy PR Pathway (After 2 Years)</li>
+        <li>10,000 NZD Guaranteed Scholarship</li>
+        <li>Study Gap Accepted – No problem with gaps</li>
+        <li>Dependents can work full-time</li>
+      </ul>
+    </section>
+
+    <section class="gifts">
+      <h3>🎁 Special Attraction on 6th September</h3>
+      <p>Open your file on the event day and get exciting gifts such as:</p>
+      <ul>
+        <li>Smart Watch</li>
+        <li>AirPods</li>
+        <li>Power Bank</li>
+        <li>Universal Travel Adapter</li>
+        <li>And many more!</li>
+      </ul>
+    </section>
+
+    <section class="ielts">
+      <h3>📢 No IELTS? No Problem!</h3>
+      <p>We offer IELTS & PTE One-to-One Courses.</p>
+      <p>
+        <strong>Special Offer:</strong>
+        Get
+        <span class="offer-wrap">
+          <span class="offer">50% OFF</span>
+        </span>
+        exclusively on the event day.
+      </p>
+    </section>
+
+    <section id="register-form">
+      <h3>Register Now for This Exciting Event</h3>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfanFUNCFGEV8rOiS1KVrvh_2k4ZusMYQNMm-wo1p6m5b0bGw/viewform?usp=sharing"
+        loading="lazy"
+      >Loading…</iframe>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 Dreambuzz Education | We don’t just dream, we make dreams
+        come true.
+      </p>
+    </footer>
+  </body>
+</html>
